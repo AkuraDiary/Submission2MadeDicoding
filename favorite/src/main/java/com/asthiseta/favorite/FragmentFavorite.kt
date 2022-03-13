@@ -16,7 +16,6 @@ import com.asthiseta.core.ui.ItemAdapter
 import com.asthiseta.di.favoriteModule
 import com.asthiseta.favorite.databinding.FragmentFavoriteBinding
 import com.asthiseta.misc.ShowStates
-import com.asthiseta.submission1madedicoding.R
 import org.koin.android.ext.android.getKoin
 import org.koin.android.viewmodel.ViewModelParameter
 import org.koin.android.viewmodel.koin.getViewModel

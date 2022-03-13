@@ -1,4 +1,4 @@
-package com.asthiseta.submission1madedicoding.home
+package com.asthiseta.submission2madedicoding.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,9 +15,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.asthiseta.core.data.Resource
 import com.asthiseta.core.ui.ItemAdapter
-import com.asthiseta.submission1madedicoding.R
-import com.asthiseta.submission1madedicoding.databinding.FragmentHomeBinding
-import com.asthiseta.submission1madedicoding.misc.ShowStates
+import com.asthiseta.submission2madedicoding.R
+import com.asthiseta.submission2madedicoding.databinding.FragmentHomeBinding
+import com.asthiseta.submission2madedicoding.misc.ShowStates
 import org.koin.android.ext.android.getKoin
 import org.koin.android.viewmodel.ViewModelParameter
 import org.koin.android.viewmodel.koin.getViewModel

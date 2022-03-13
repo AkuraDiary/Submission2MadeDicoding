@@ -1,4 +1,4 @@
-package com.asthiseta.submission1madedicoding.detail
+package com.asthiseta.submission2madedicoding.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

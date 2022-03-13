@@ -1,7 +1,6 @@
-package com.asthiseta.submission1madedicoding.detail
+package com.asthiseta.submission2madedicoding.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.asthiseta.core.data.Resource
 import com.asthiseta.core.domain.model.Item
-import com.asthiseta.submission1madedicoding.R
-import com.asthiseta.submission1madedicoding.databinding.FragmentDetailBinding
+import com.asthiseta.submission2madedicoding.R
+import com.asthiseta.submission2madedicoding.databinding.FragmentDetailBinding
 import com.shashank.sony.fancytoastlib.FancyToast
 import org.koin.android.viewmodel.ext.android.viewModel
 

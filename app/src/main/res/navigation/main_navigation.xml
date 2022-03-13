@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_destination"
-        android:name="com.asthiseta.submission1madedicoding.home.FragmentHome"
+        android:name="com.asthiseta.submission2madedicoding.home.FragmentHome"
         android:label="home_fragment"
         tools:layout="@layout/fragment_home" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/detail_destination"
-        android:name="com.asthiseta.submission1madedicoding.detail.FragmentDetail"
+        android:name="com.asthiseta.submission2madedicoding.detail.FragmentDetail"
         android:label="detail_fragment"
         tools:layout="@layout/fragment_detail" >
         <argument

@@ -1,4 +1,4 @@
-package com.asthiseta.submission1madedicoding.ui
+package com.asthiseta.submission2madedicoding.ui
 
 import android.os.Bundle
 import android.view.View
@@ -10,8 +10,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.asthiseta.submission1madedicoding.R
-import com.asthiseta.submission1madedicoding.databinding.ActivityMainBinding
+import com.asthiseta.submission2madedicoding.R
+import com.asthiseta.submission2madedicoding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding

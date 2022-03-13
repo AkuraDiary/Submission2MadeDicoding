@@ -1,4 +1,4 @@
-package com.asthiseta.submission1madedicoding.home
+package com.asthiseta.submission2madedicoding.home
 
 import androidx.lifecycle.*
 import com.asthiseta.core.data.Resource

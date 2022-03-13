@@ -1,12 +1,12 @@
-package com.asthiseta.submission1madedicoding.ui
+package com.asthiseta.submission2madedicoding.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.asthiseta.submission1madedicoding.R
-import com.asthiseta.submission1madedicoding.databinding.ActivitySplashScreenBinding
+import com.asthiseta.submission2madedicoding.R
+import com.asthiseta.submission2madedicoding.databinding.ActivitySplashScreenBinding
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {

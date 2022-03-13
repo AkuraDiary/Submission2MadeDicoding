@@ -1,7 +1,7 @@
-package com.asthiseta.submission1madedicoding.misc
+package com.asthiseta.submission2madedicoding.misc
 
 import android.view.View
-import com.asthiseta.submission1madedicoding.databinding.*
+import com.asthiseta.submission2madedicoding.databinding.*
 
 
 interface ShowStates {

@@ -1,11 +1,11 @@
-package com.asthiseta.submission1madedicoding
+package com.asthiseta.submission2madedicoding
 
 import android.app.Application
 import com.asthiseta.core.di.databaseModule
 import com.asthiseta.core.di.networkModule
 import com.asthiseta.core.di.repositoryModule
-import com.asthiseta.submission1madedicoding.di.useCaseModule
-import com.asthiseta.submission1madedicoding.di.viewModelModule
+import com.asthiseta.submission2madedicoding.di.useCaseModule
+import com.asthiseta.submission2madedicoding.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

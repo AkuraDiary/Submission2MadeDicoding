@@ -1,4 +1,4 @@
-package com.asthiseta.submission1madedicoding
+package com.asthiseta.submission2madedicoding
 
 import org.junit.Test
 

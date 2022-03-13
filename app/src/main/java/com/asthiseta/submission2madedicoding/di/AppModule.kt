@@ -1,9 +1,9 @@
-package com.asthiseta.submission1madedicoding.di
+package com.asthiseta.submission2madedicoding.di
 
 import com.asthiseta.core.domain.usecase.ItemInteractor
 import com.asthiseta.core.domain.usecase.ItemUseCase
-import com.asthiseta.submission1madedicoding.detail.DetailVM
-import com.asthiseta.submission1madedicoding.home.HomeVM
+import com.asthiseta.submission2madedicoding.detail.DetailVM
+import com.asthiseta.submission2madedicoding.home.HomeVM
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
