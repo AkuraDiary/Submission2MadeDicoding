@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         maven{url "https://jitpack.io"}
     }
 }
-rootProject.name = "Submission1MadeDicoding"
+rootProject.name = "Submission2MadeDicoding"
 include ':app'
 include ':core'
 include ':favorite'
