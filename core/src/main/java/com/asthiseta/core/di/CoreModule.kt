@@ -1,5 +1,6 @@
 package com.asthiseta.core.di
 
+
 import androidx.room.Room
 import com.asthiseta.core.BuildConfig
 import com.asthiseta.core.data.ItemRepos
@@ -8,6 +9,9 @@ import com.asthiseta.core.data.source.local.room.KosDatabase
 import com.asthiseta.core.data.source.remote.RemoteDataSource
 import com.asthiseta.core.data.source.remote.network.ClientApi
 import com.asthiseta.core.domain.repository.IItemRepository
+import net.sqlcipher.database.SQLiteDatabase.getBytes
+import net.sqlcipher.database.SupportFactory
+
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
@@ -23,15 +27,20 @@ val databaseModule = module{
         get<KosDatabase>().kosDao()
     }
     single {
+        val passPhrase : ByteArray = getBytes("KatalogKosMokletJos".toCharArray())
+        val factory = SupportFactory(passPhrase)
         Room.databaseBuilder(
             androidContext(),
             KosDatabase::class.java, "Kos.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
 val networkModule = module {
     single {
+        //TODO add certificate pinning here
         OkHttpClient.Builder()
             .addInterceptor{ chain ->
                 val original = chain.request()
