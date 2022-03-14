@@ -1,6 +1,5 @@
 package com.asthiseta.core.data
 
-import android.util.Log
 import com.asthiseta.core.data.source.NetworkResources
 import com.asthiseta.core.data.source.local.LocalDataSource
 import com.asthiseta.core.data.source.remote.RemoteDataSource

@@ -1,7 +1,6 @@
 package com.asthiseta.core.data.source.remote.network
 
 import com.asthiseta.core.data.source.remote.response.ItemResponse
-import com.asthiseta.core.data.source.remote.response.ListItemResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

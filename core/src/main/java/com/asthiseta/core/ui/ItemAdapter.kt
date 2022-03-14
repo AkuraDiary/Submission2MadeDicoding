@@ -1,6 +1,6 @@
 package com.asthiseta.core.ui
 
-import android.util.Log
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +10,7 @@ import com.asthiseta.core.domain.model.Item
 
 class ItemAdapter(private val item: ArrayList<Item>, private val clickListener :(String, View) -> Unit):
 RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(items : List<Item>?){
         item.apply {
             clear()
