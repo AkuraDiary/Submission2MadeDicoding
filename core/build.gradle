@@ -7,6 +7,12 @@ plugins {
 
 }
 apply from: '../shared_dependencies.gradle'
+/*leakCanary {
+    // LeakCanary needs to know which variants have obfuscation turned on
+    filterObfuscatedVariants { variant ->
+        variant.name == "debug"
+    }
+}*/
 android {
     compileSdk 31
 
@@ -22,7 +28,11 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -70,4 +80,8 @@ dependencies {
     //Coroutine Flow dependencies
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_ver"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_ver"
+
+    //Database encryption
+    implementation "net.zetetic:android-database-sqlcipher:$sqlciper_ver"
+    implementation "androidx.sqlite:sqlite-ktx:$sqlite_ver"
 }
