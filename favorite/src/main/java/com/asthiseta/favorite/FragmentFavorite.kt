@@ -27,7 +27,7 @@ class FragmentFavorite : Fragment() , ShowStates {
 
     private lateinit var bindingFav : FragmentFavoriteBinding
     private lateinit var favAdapter : ItemAdapter
-    private val favoriteVM : FavoriteVM by sharedGraphViewModel(R.id.main_navigation)
+    private val favoriteVM : FavoriteVM by sharedGraphViewModel(com.asthiseta.submission2madedicoding.R.id.main_navigation)
 
     private inline fun<reified VM : ViewModel> Fragment.sharedGraphViewModel(
         @IdRes navGraphId : Int,
@@ -44,7 +44,7 @@ class FragmentFavorite : Fragment() , ShowStates {
         savedInstanceState: Bundle?
     ): View {
         val actionBar = (activity as AppCompatActivity).supportActionBar
-        actionBar?.title = getString(R.string.favorite_txt)
+        actionBar?.title = getString(com.asthiseta.submission2madedicoding.R.string.favorite_txt)
         bindingFav = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
 
         loadKoinModules(favoriteModule)
@@ -70,7 +70,7 @@ class FragmentFavorite : Fragment() , ShowStates {
         bindingFav?.apply {
             errorLayoutFav.mainNotFound.visibility = visible
             progressBar.apply {
-                trackColor = getColor(context, R.color.orange)
+                trackColor = getColor(context, com.asthiseta.submission2madedicoding.R.color.orange)
                 visibility = visible
             }
             recyclerFav.visibility = visible
@@ -91,7 +91,7 @@ class FragmentFavorite : Fragment() , ShowStates {
             recyclerFav.visibility = gone
             errorLayoutFav.apply {
                 mainNotFound.visibility = visible
-                emptyText.text = message ?: resources.getString(R.string.empty_data)
+                emptyText.text = message ?: resources.getString(com.asthiseta.submission2madedicoding.R.string.empty_data)
             }
         }
     }
@@ -105,7 +105,7 @@ class FragmentFavorite : Fragment() , ShowStates {
                     favAdapter.setData(it)
                 }else{
                     favError(bindingFav,
-                    message = getString(R.string.empty_data))
+                    message = getString(com.asthiseta.submission2madedicoding.R.string.empty_data))
                 }
             }
         }
