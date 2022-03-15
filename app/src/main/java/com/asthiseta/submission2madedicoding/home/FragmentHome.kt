@@ -97,10 +97,7 @@ class FragmentHome : Fragment(), ShowStates {
     override fun homeLoading(bindingHome: FragmentHomeBinding?) {
         bindingHome?.apply {
             errorLayout.mainNotFound.visibility = gone
-            progressBar.apply {
-                visibility = visible
-                trackColor = getColor(context, R.color.orange)
-            }
+            progressBar.visibility = visible
             recyclerHome.visibility = gone
         }
        // return super.homeLoading(bindingHome)

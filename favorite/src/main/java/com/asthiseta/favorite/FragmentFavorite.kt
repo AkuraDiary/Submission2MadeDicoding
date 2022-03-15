@@ -69,10 +69,7 @@ class FragmentFavorite : Fragment() , ShowStates {
     override fun favLoading(bindingFav: FragmentFavoriteBinding?) {
         bindingFav?.apply {
             errorLayoutFav.mainNotFound.visibility = visible
-            progressBar.apply {
-                trackColor = getColor(context, com.asthiseta.submission2madedicoding.R.color.orange)
-                visibility = visible
-            }
+            progressBar.visibility = visible
             recyclerFav.visibility = visible
         }
     }
