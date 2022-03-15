@@ -24,12 +24,15 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
+
       - run:
-          name: Clean project
-          command: ./gradlew clean #clean the project first
+          name: Clean Project
+          command: ./gradlew clean
+
       # The next step will run the unit tests
       - android/run-tests:
           test-command: ./gradlew lint testDebug --continue
@@ -37,7 +40,7 @@ jobs:
       # Then start the emulator and run the Instrumentation tests!
       - android/start-emulator-and-run-tests:
           test-command: ./gradlew connectedDebugAndroidTest
-          system-image: system-images;android-30;google_apis;x86
+          system-image: system-images;android-28;google_apis;x86
 
       # And finally run the release build
       - run:
