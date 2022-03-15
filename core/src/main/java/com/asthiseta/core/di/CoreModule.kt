@@ -11,6 +11,7 @@ import com.asthiseta.core.data.source.remote.network.ClientApi
 import com.asthiseta.core.domain.repository.IItemRepository
 import net.sqlcipher.database.SQLiteDatabase.getBytes
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
 
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
@@ -40,7 +41,12 @@ val databaseModule = module{
 
 val networkModule = module {
     single {
-        //TODO add certificate pinning here
+        val hostname = "kkmboiscuy.my.id"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/gsI9ZG1F6xtbg/BCCBQGrzaWgNHgLig7TFt3k7GVpQE=")
+            .add(hostname, "sha256/jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0=")
+            .add(hostname, "sha256/C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=")
+            .build()
         OkHttpClient.Builder()
             .addInterceptor{ chain ->
                 val original = chain.request()
@@ -50,6 +56,7 @@ val networkModule = module {
             }
             .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
 
