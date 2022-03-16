@@ -32,9 +32,14 @@ class FragmentDetail : Fragment(){
         val actionBar = (activity as AppCompatActivity).supportActionBar
         actionBar?.title = args.name
         bindingDetail = FragmentDetailBinding.inflate(layoutInflater, container, false)
+
+        return bindingDetail.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         bindingDetail.lifecycleOwner = viewLifecycleOwner
         observeDetail()
-        return bindingDetail.root
     }
 
     private fun changeFav(favoriteStats: Boolean) {
