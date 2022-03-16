@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.FragmentNavigatorExtras
