@@ -52,7 +52,7 @@ jobs:
 
       # Then start the emulator and run the Instrumentation tests!
       - android/start-emulator-and-run-tests:
-          test-command: ./gradlew connectedDebugAndroidTest
+          test-command: ./gradlew connectedDebugAndroidTest -x :app:processDebugAndroidTestManifest
           system-image: system-images;android-28;google_apis;x86
       - run:
           name: Run Tests
