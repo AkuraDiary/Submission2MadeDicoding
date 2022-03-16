@@ -16,7 +16,7 @@ import com.shashank.sony.fancytoastlib.FancyToast
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class FragmentDetail : Fragment(){
-    private lateinit var bindingDetail : FragmentDetailBinding
+    private var bindingDetail : FragmentDetailBinding? = null
     private lateinit var item : Item
     private var isFavorite = false
 
@@ -33,20 +33,20 @@ class FragmentDetail : Fragment(){
         actionBar?.title = args.name
         bindingDetail = FragmentDetailBinding.inflate(layoutInflater, container, false)
 
-        return bindingDetail.root
+        return bindingDetail!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bindingDetail.lifecycleOwner = viewLifecycleOwner
+        bindingDetail?.lifecycleOwner = viewLifecycleOwner
         observeDetail()
     }
 
     private fun changeFav(favoriteStats: Boolean) {
         if(favoriteStats){
-            bindingDetail.fabFavorite.setImageResource(R.drawable.ic_fav)
+            bindingDetail?.fabFavorite?.setImageResource(R.drawable.ic_fav)
         }else{
-            bindingDetail.fabFavorite.setImageResource(R.drawable.ic_unfav)
+            bindingDetail?.fabFavorite?.setImageResource(R.drawable.ic_unfav)
         }
     }
 
@@ -75,7 +75,7 @@ class FragmentDetail : Fragment(){
                 is Resource.Success ->{
                     item = it.data!!
 
-                    bindingDetail.data = it.data
+                    bindingDetail?.data  = it.data
 
                     detailVM.getDetailState(args.name)?.observe(viewLifecycleOwner) { _item ->
                         isFavorite = _item.isFav == true
@@ -83,9 +83,9 @@ class FragmentDetail : Fragment(){
                         changeFav(isFavorite)
                     }
 
-                    bindingDetail.fabFavorite.show()
+                    bindingDetail?.fabFavorite?.show()
                     changeFav(isFavorite)
-                    bindingDetail.fabFavorite.setOnClickListener{
+                    bindingDetail?.fabFavorite?.setOnClickListener{
 
 
                         addOrRemoveFav()
@@ -95,11 +95,11 @@ class FragmentDetail : Fragment(){
                 }
 
                 is Resource.Error -> {
-                    bindingDetail.fabFavorite.hide()
+                    bindingDetail?.fabFavorite?.hide()
                 }
 
                 is Resource.Loading -> {
-                    bindingDetail.fabFavorite.hide()
+                    bindingDetail?.fabFavorite?.hide()
                 }
             }
         }
