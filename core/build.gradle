@@ -8,14 +8,6 @@ plugins {
 }
 apply from: '../shared_dependencies.gradle'
 
-
-/*leakCanary {
-    // LeakCanary needs to know which variants have obfuscation turned on
-    filterObfuscatedVariants { variant ->
-        variant.name == "debug"
-    }
-}*/
-
 android {
     compileSdk 31
 
