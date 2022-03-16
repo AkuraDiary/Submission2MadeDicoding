@@ -87,36 +87,39 @@ class FragmentHome : Fragment(), ShowStates {
     override fun homeSuccess(bindingHome: FragmentHomeBinding?){
         bindingHome?.apply {
             errorLayout.mainNotFound.visibility = gone
-            progressBar.visibility = gone
+
             recyclerHome.visibility = visible
             resources
         }
-        //return super.homeSuccess(bindingHome)
+
     }
 
     override fun homeLoading(bindingHome: FragmentHomeBinding?) {
         bindingHome?.apply {
-            errorLayout.mainNotFound.visibility = gone
+            errorLayout.apply {
+                mainNotFound.visibility = gone
+
+            }
             progressBar.visibility = visible
             recyclerHome.visibility = gone
         }
-       // return super.homeLoading(bindingHome)
+
     }
 
     override fun homeError(bindingHome: FragmentHomeBinding?, message: String?) {
         bindingHome?.apply {
             errorLayout.apply {
                 mainNotFound.visibility = visible
+                noResult.visibility = visible
                 if(message == null){
                     emptyText.text = resources.getString(R.string.empty_data)
                 }else{
                     emptyText.text = message
                 }
             }
-            progressBar.visibility = gone
             recyclerHome.visibility = gone
         }
-        //return super.homeError(bindingHome, message)
+
     }
 
     private fun observeHome() {
