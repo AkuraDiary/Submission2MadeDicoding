@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.SearchView
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getColor
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -25,7 +24,7 @@ import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.Qualifier
 
 class FragmentHome : Fragment(), ShowStates {
-    private lateinit var bindingHome : FragmentHomeBinding
+    private var bindingHome : FragmentHomeBinding? = null
     private lateinit var homeAdapter : ItemAdapter
     private val homeVM : HomeVM by sharedGraphViewModel(R.id.main_navigation)
 
@@ -46,14 +45,14 @@ class FragmentHome : Fragment(), ShowStates {
         val actionBar = (activity as AppCompatActivity).supportActionBar
         actionBar?.title = getString(R.string.app_name)
         bindingHome = FragmentHomeBinding.inflate(layoutInflater, container, false)
-        return bindingHome.root
+        return bindingHome!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
 
-        bindingHome.errorLayout.emptyText.text = getString(R.string.searchForKos_txt)
+        bindingHome?.errorLayout?.emptyText?.text = getString(R.string.searchForKos_txt)
 
         homeAdapter = ItemAdapter(arrayListOf()){name, iv ->
             findNavController().navigate(FragmentHomeDirections.actionHomeToDetailFragment(name),
@@ -61,17 +60,17 @@ class FragmentHome : Fragment(), ShowStates {
             )
         }
 
-        bindingHome.recyclerHome.apply {
+        bindingHome?.recyclerHome?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = homeAdapter
         }
 
-        bindingHome.searchBar.apply {
+        bindingHome?.searchBar?.apply {
             queryHint = resources.getString(R.string.search_placeholderHint)
             setOnQueryTextListener(object : SearchView.OnQueryTextListener{
                 override fun onQueryTextSubmit(query: String): Boolean {
                     homeVM.setForSearch(query)
-                    bindingHome.searchBar.clearFocus()
+                    bindingHome!!.searchBar.clearFocus()
                     return true
 
                 }
@@ -82,6 +81,11 @@ class FragmentHome : Fragment(), ShowStates {
             })
         }
         observeHome()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        bindingHome = null
     }
 
     override fun homeSuccess(bindingHome: FragmentHomeBinding?){
