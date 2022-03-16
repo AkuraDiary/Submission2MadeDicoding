@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.asthiseta.submission2madedicoding
 
 import android.app.Application
