@@ -43,7 +43,7 @@ buildscript{
 
         //database encryption & security
         sqlciper_ver = "4.4.0"
-        sqlite_ver = "2.1.0"
+        sqlite_ver = "2.2.0"
 
         //leak canary
         leakcanary_ver = "2.4"
