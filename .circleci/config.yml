@@ -30,9 +30,6 @@ jobs:
           command: sudo chmod +x ./gradlew
 
       - run:
-          name: Clean Project
-          command: ./gradlew clean
-      - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
@@ -40,6 +37,9 @@ jobs:
           paths:
             - ~/.android/build-cache
             - ~/.android/cache
+      - run:
+          name: Clean Project
+          command: ./gradlew clean
       - run:
           name: Run Build
           command: ./gradlew build --no-daemon --stacktrace -x :app:processDebugAndroidTestManifest
