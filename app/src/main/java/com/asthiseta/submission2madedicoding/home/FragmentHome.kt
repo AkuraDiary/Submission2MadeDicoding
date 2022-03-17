@@ -25,7 +25,7 @@ import org.koin.core.qualifier.Qualifier
 
 class FragmentHome : Fragment(), ShowStates {
     private var bindingHome : FragmentHomeBinding? = null
-    private lateinit var homeAdapter : ItemAdapter
+    private var homeAdapter : ItemAdapter? = null
     private val homeVM : HomeVM by sharedGraphViewModel(R.id.main_navigation)
 
     private inline fun<reified VM: ViewModel> Fragment.sharedGraphViewModel (
@@ -86,6 +86,7 @@ class FragmentHome : Fragment(), ShowStates {
     override fun onDestroyView() {
         super.onDestroyView()
         bindingHome = null
+        homeAdapter = null
     }
 
     override fun homeSuccess(bindingHome: FragmentHomeBinding?){
@@ -133,7 +134,7 @@ class FragmentHome : Fragment(), ShowStates {
                 when (it) {
                     is Resource.Success -> {
                         homeSuccess(bindingHome)
-                        it.data?.let { data -> homeAdapter.setData(data) }
+                        it.data?.let { data -> homeAdapter!!.setData(data) }
                     }
                     is Resource.Loading -> homeLoading(bindingHome)
                     is Resource.Error -> homeError(bindingHome, it.message)
