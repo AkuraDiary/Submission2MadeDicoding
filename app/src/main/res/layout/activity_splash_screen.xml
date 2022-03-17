@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="413dp"
         android:layout_height="415dp"
-
+        android:id="@+id/logo"
         android:layout_gravity="center"
         android:contentDescription="@string/txt_wm"
         android:src="@drawable/kkm_logo_full"
