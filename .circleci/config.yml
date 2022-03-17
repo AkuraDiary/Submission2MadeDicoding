@@ -56,7 +56,7 @@ jobs:
 #          system-image: system-images;android-28;google_apis;x86
       - run:
           name: Run Tests
-          command: ./gradlew lint test -x :app:processDebugAndroidTestManifest
+          command: ./gradlew lint test -x :app:processDebugAndroidTestManifest -x :favorite:kaptDebugKotlin -x :favorite:kaptReleaseKotlin
       - store_test_results:
           path: app/build/test-results
       - store_artifacts:  
