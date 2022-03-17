@@ -7,7 +7,6 @@
     tools:context=".ui.SplashScreenActivity">
 
     <ImageView
-        android:id="@+id/logo"
         android:layout_width="413dp"
         android:layout_height="415dp"
 

@@ -24,14 +24,6 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextContent.Small">
-        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
-    </style>
-
-    <style name="TextContent.Small.White">
-        <item name="android:textColor">@android:color/white</item>
-    </style>
-
     <style name="TextContent.Subtitle">
         <item name="android:textColor">@color/dark_bg</item>
         <item name="android:textSize">12sp</item>
