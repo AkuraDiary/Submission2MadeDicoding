@@ -43,7 +43,7 @@ buildscript{
 
         //database encryption & security
         sqlciper_ver = "4.4.0"
-        sqlite_ver = "2.1.0"
+        sqlite_ver = "2.2.0"
 
         //leak canary
         leakcanary_ver = "2.4"
@@ -55,6 +55,7 @@ buildscript{
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_ver"
+        classpath "com.squareup.leakcanary:leakcanary-deobfuscation-gradle-plugin:$leakcanary_ver"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -74,4 +75,5 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
 

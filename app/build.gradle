@@ -9,6 +9,7 @@ plugins {
 
 apply from: '../shared_dependencies.gradle'
 
+
 android {
     compileSdk 31
 
