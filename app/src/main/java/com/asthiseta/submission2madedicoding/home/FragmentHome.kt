@@ -133,6 +133,7 @@ class FragmentHome : Fragment(), ShowStates {
             if (it != null) {
                 when (it) {
                     is Resource.Success -> {
+
                         homeSuccess(bindingHome)
                         it.data?.let { data -> homeAdapter!!.setData(data) }
                     }
