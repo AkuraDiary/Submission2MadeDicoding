@@ -66,7 +66,7 @@ jobs:
       - run:
           name: Assemble release build
           command: |
-            ./gradlew assembleRelease
+            ./gradlew assembleRelease -x :favorite:kaptReleaseKotlin
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
