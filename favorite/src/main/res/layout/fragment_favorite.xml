@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedIds" />
 
     <include
         android:id="@+id/errorLayoutFav"
@@ -26,7 +27,8 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:ignore="UnusedIds" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerFav"
@@ -37,7 +39,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/list_item_layout" />
+        tools:listitem="@layout/list_item_layout"
+        tools:ignore="UnusedIds" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
